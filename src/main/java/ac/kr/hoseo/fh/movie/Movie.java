@@ -35,7 +35,7 @@ public class Movie {
 	//영화 아이디
 	private Integer id;	
 	
-	@Column(nullable = false)//name은 null값이 들어가면 안됌 	
+	@Column(name ="Movie",nullable = false)//name은 null값이 들어가면 안됌 	
 	//영화 제목
 	private String name;	
 	
