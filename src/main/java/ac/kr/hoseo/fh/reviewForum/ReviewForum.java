@@ -36,8 +36,8 @@ public class ReviewForum {
 	//내용
 	private String content;	
 	
-	//리뷰달은 영화 제목
-	@ManyToOne
-	@JoinColumn()
-	private Movie movie;
+//	//리뷰달은 영화 제목
+//	@ManyToOne
+//	@JoinColumn()
+//	private Movie movie;
 }

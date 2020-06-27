@@ -33,10 +33,8 @@ public class Actor {
 	private String name;
 	
 	@ManyToOne
-	@JoinColumn(name = "Movie")
-	private String movie;
-	
-	
+	@JoinColumn(name = "movie_id")
+	private Movie movie;
 	
 	
 }

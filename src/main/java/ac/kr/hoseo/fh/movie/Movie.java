@@ -14,7 +14,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
 
-import ac.kr.hoseo.fh.reviewForum.ReviewForum;
+import ac.kr.hoseo.fh.actor.Actor;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -26,7 +26,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 @Table(name ="movie",uniqueConstraints = {
-		@UniqueConstraint(name="uc_movie_name",columnNames = {"name"})
+		@UniqueConstraint(name="uc_movie_name",columnNames = {"movie_name"})
 })
 public class Movie {
 	@Id	//id 컬럼을 Primary Key로 선언함
@@ -35,9 +35,12 @@ public class Movie {
 	//영화 아이디
 	private Integer id;	
 	
-	@Column(name ="Movie",nullable = false)//name은 null값이 들어가면 안됌 	
+	@Column(name ="movie_name",nullable = false)//name은 null값이 들어가면 안됌 	
 	//영화 제목
 	private String name;	
+	
+	//영화 포스터
+	private String posterUrl;
 	
 	@Temporal(TemporalType.DATE)
 	//개봉일
@@ -51,10 +54,10 @@ public class Movie {
 	//영화 감독
 	private String director;	
 	//영화 배우
-	private String actor;
+	private String mainActor;
 
 	@OneToMany(mappedBy = "movie")
-	private List<ReviewForum> reviews;
+	private List<Actor> castactor;
 	
 	
 	
