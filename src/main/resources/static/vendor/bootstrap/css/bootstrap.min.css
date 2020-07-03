@@ -9938,23 +9938,6 @@ a.text-dark:focus, a.text-dark:hover {
 }
 /*# sourceMappingURL=bootstrap.min.css.map */
 
-
-
-
-
-.movie_list{
-	
-}
-
-.movie_list li{
-	list-style-type: none;
-	
-		margin:10px;
-	
-}
-
-.thumbnail{
-	width: auto;
-	height: auto;
-	max-width: 100px;
+.moviePoster{
+	width:100px;
 }
