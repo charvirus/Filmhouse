@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>Film House</title>
+
+<!-- Bootstrap core CSS -->
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="css/simple-sidebar.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<div class="d-flex" id="wrapper">
+
+		<!-- Sidebar -->
+		<div class="bg-light border-right" id="sidebar-wrapper">
+			<div class="sidebar-heading">Film House</div>
+			<div class="list-group list-group-flush">
+				<a href="movie_list" class="list-group-item list-group-item-action bg-light">Movie</a>
+				<a href="actor_list" class="list-group-item list-group-item-action bg-light">Actor</a>
+				<a href="review_list" class="list-group-item list-group-item-action bg-light">Review</a>
+			</div>
+		</div>
+		<!-- /#sidebar-wrapper -->
+
+		<!-- Page Content -->
+		<div id="page-content-wrapper">
+
+			<nav
+				class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+				<button class="btn btn-primary" id="menu-toggle">Toggle
+					Menu</button>
+
+
+			</nav>
+
+			<div class="container-fluid">
+				<h1 class="mt-4">Review List</h1>
+				<table border="1">
+					<thead>
+						<tr>
+							<td>번호</td>
+							<td>제목</td>
+							<td>작성자</td>
+							<td>작성일</td>
+							<td>내용</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="review : ${ReviewList}">
+							<td th:text="${review.id}">1</td>
+							<td th:text="${review.title}">포드 V 페라리 후기</td>
+							<td th:text="${review.writerName}">포드 16세</td>
+							<td th:text="${review.date}">2019-12-06</td>
+							<td th:text="${review.content}">정말 재밌었습니다...</td>
+						</tr>
+					</tbody>
+				</table>
+				<a href="review_add">리뷰 추가</a>
+			</div>
+		</div>
+		<!-- /#page-content-wrapper -->
+
+	</div>
+	<!-- /#wrapper -->
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Menu Toggle Script -->
+	<script>
+		$("#menu-toggle").click(function(e) {
+			e.preventDefault();
+			$("#wrapper").toggleClass("toggled");
+		});
+	</script>
+
+</body>
+
+</html>

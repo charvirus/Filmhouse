@@ -27,9 +27,12 @@
 		<div class="bg-light border-right" id="sidebar-wrapper">
 			<div class="sidebar-heading">Film House</div>
 			<div class="list-group list-group-flush">
-				<a href="#" class="list-group-item list-group-item-action bg-light">Movie</a>
-				<a href="#" class="list-group-item list-group-item-action bg-light">Actor</a>
-				<a href="#" class="list-group-item list-group-item-action bg-light">Review</a>
+				<a href="movie_list"
+					class="list-group-item list-group-item-action bg-light">Movie</a> <a
+					href="actor_list"
+					class="list-group-item list-group-item-action bg-light">Actor</a> <a
+					href="review_list"
+					class="list-group-item list-group-item-action bg-light">Review</a>
 			</div>
 		</div>
 		<!-- /#sidebar-wrapper -->
@@ -46,20 +49,27 @@
 			</nav>
 
 			<div class="container-fluid">
-				<h1 class="mt-4">Movie List</h1>
-				<ul class="movie_list">
-					<li  th:each="movieList : ${MovieList}">
-						<p th:text="${movieList.name}">이름</p>
-						<img class="thumbnail"
-						th:src="${movieList.posterUrl}">
-						<p th:text="${movieList.releaseDate}">개봉일</p>
-						<p th:text="${movieList.madeCon}">제작국가</p>
-						<p th:text="${movieList.genre}">장르</p>
-						<p th:text="${movieList.runtime}">상영시간</p>
-						<p th:text="${movieList.director}">감독</p>
-						<p th:text="${movieList.mainActor}">주연 배우</p>						
-					</li>
-				</ul>
+				<h1 class="mt-4">Add Review</h1>
+				<form action="" method="post">
+					<table>
+						<tbody>
+							<tr>
+								<td><input type="text" name="title" placeholder="제목" /></td>
+							</tr>
+							<tr>
+								<td><input type="text" name="writerName" placeholder="작성자 이름" /></td>
+							</tr>
+							<tr>
+								<td><input type="text" name="date" placeholder="작성일(년 월 일을 /으로 구분지어 넣어주세요)" /></td>
+							</tr>
+							<tr>
+								<td><input type="text" name="content" placeholder="내용" /></td>
+							</tr>
+						</tbody>
+					</table>
+					<button type="submit">저장</button>
+
+				</form>
 			</div>
 		</div>
 		<!-- /#page-content-wrapper -->

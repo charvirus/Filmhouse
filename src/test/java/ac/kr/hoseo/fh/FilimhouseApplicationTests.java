@@ -48,7 +48,7 @@ class FilimhouseApplicationTests {
 		.id(1)
 		.title("포드 V 페라리 감상평")
 		.writerName("차 덕후")
-		.reg_date(new Date())
+		.date(new Date())
 		.content("포드 V 페라리 정말 재밌게 봤습니다. 나중에 극장가서 한번 더 볼 예정!")
 		.build();
 		reviewforumRepository.save(r1);

@@ -27,9 +27,9 @@
 		<div class="bg-light border-right" id="sidebar-wrapper">
 			<div class="sidebar-heading">Film House</div>
 			<div class="list-group list-group-flush">
-				<a href="#" class="list-group-item list-group-item-action bg-light">Movie</a>
-				<a href="#" class="list-group-item list-group-item-action bg-light">Actor</a>
-				<a href="#" class="list-group-item list-group-item-action bg-light">Review</a>
+				<a href="movie_list" class="list-group-item list-group-item-action bg-light">Movie</a>
+				<a href="actor_list" class="list-group-item list-group-item-action bg-light">Actor</a>
+				<a href="review_list" class="list-group-item list-group-item-action bg-light">Review</a>
 			</div>
 		</div>
 		<!-- /#sidebar-wrapper -->
@@ -41,40 +41,26 @@
 				class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
 				<button class="btn btn-primary" id="menu-toggle">Toggle
 					Menu</button>
-
-
 			</nav>
 
 			<div class="container-fluid">
 				<h1 class="mt-4">Movie List</h1>
-				<table border="1">
-					<tr>
-						<td rowspan="3"><img th:src="${movieList.posterUrl}"
-							src="포드_V_페라리_포스터.jpg" class="moviePoster"></td>
-						<td>영화 제목, 영화 개봉일, 제작 국가</td>
-					</tr>
-					<tr>
-						<td>상영시간, 장르</td>
-					</tr>
-					
-					<tr>
-						<td>감독, 주연 배우</td>
-					</tr>
-					
-					<tr>
-						<td rowspan="3"><img th:src="${movieList.posterUrl}"
-							src="포드_V_페라리_포스터.jpg" class="moviePoster"></td>
-						<td>영화 제목, 영화 개봉일, 제작 국가</td>
-					</tr>
-					<tr>
-						<td>상영시간, 장르</td>
+				<table border="1" id="movie_table">
+					<tr th:each="movie : ${movieList}">
+						<td><img th:src="${movie.posterUrl}"
+							src="https://movie-phinf.pstatic.net/20191204_91/15754257752042kHvB_JPEG/movie_image.jpg" class="moviePoster"></td>
+						<td th:text="${movie.name}" width="200px">영화 제목</td>
+						<td th:text="${movie.releaseDate}" width="100px">영화 개봉일</td>
+						<td th:text="${movie.madeCon}">제작 국가</td>
+						<td th:text="${movie.runtime}" width="50px">상영시간</td>
+						<td th:text="${movie.genre}" width="70px">장르</td>
+						<td th:text="${movie.director}" width="100px">감독</td>
+						<td th:text="${movie.mainActor}" width="70px">주연 배우</td>
 					</tr>
 					
-					<tr>
-						<td>감독, 주연 배우</td>
-					</tr>
 				</table>
-
+				
+				<a href="movie_add">영화 추가</a>
 				<!--<ul class="movie_list">
 					<li th:each="movieList : ${MovieList}"><img
 						th:src="${movieList.posterUrl}" src="포드_V_페라리_포스터.jpg"

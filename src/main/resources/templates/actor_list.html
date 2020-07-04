@@ -27,9 +27,9 @@
 		<div class="bg-light border-right" id="sidebar-wrapper">
 			<div class="sidebar-heading">Film House</div>
 			<div class="list-group list-group-flush">
-				<a href="#" class="list-group-item list-group-item-action bg-light">Movie</a>
-				<a href="#" class="list-group-item list-group-item-action bg-light">Actor</a>
-				<a href="#" class="list-group-item list-group-item-action bg-light">Review</a>
+				<a href="movie_list" class="list-group-item list-group-item-action bg-light">Movie</a>
+				<a href="actor_list" class="list-group-item list-group-item-action bg-light">Actor</a>
+				<a href="review_list" class="list-group-item list-group-item-action bg-light">Review</a>
 			</div>
 		</div>
 		<!-- /#sidebar-wrapper -->
@@ -50,13 +50,13 @@
 				<table border="1">
 					<tr>
 						<td>배우 이름</td>
-					</tr>
-					
-					<tr>
 						<td>출연 영화 목록</td>
 					</tr>
+					<tr th:each="actor : ${ActorList}">
+						<td th:text="${actor.name}">맷</td>
+					</tr>
 				</table>
-
+				<a href="actor_add">배우 추가</a>
 				<!--<ul class="movie_list">
 					<li th:each="movieList : ${MovieList}"><img
 						th:src="${movieList.posterUrl}" src="포드_V_페라리_포스터.jpg"

@@ -31,8 +31,8 @@ public class ReviewForum {
 	private String title;
 	//작성자 ID
 	private String writerName;	
-	//작성일
-	private Date reg_date;	
+	//작성일(자동입력될것)
+	private Date date;	
 	//내용
 	private String content;	
 	

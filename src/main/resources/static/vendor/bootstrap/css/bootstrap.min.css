@@ -9941,3 +9941,7 @@ a.text-dark:focus, a.text-dark:hover {
 .moviePoster{
 	width:100px;
 }
+
+#movie_table td{
+	text-align: center;
+}

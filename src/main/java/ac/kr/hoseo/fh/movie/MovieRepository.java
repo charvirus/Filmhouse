@@ -9,8 +9,6 @@ import org.springframework.data.repository.CrudRepository;
 public interface MovieRepository extends CrudRepository<Movie, Integer>{
 	
 
-	List<Movie> list();
-	
 	List<Movie> findAll(Pageable page);
 	
 	List<Movie> findByNameContains(String name,Pageable page);
